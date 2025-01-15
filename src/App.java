@@ -1,9 +1,14 @@
 
 import javax.swing.JFrame;
 
+import canvas.GameCanvas;
+
 public class App {
     public static void main(String[] args) throws Exception {
         CreateGameWindow();
+        while (true) {
+            System.out.println("loop mian");
+        }
     }
 
     static void CreateGameWindow() {
@@ -15,6 +20,6 @@ public class App {
         GameCanvas newGameCanvas = new GameCanvas();
         gameWindow.add(newGameCanvas);
         gameWindow.setVisible(true);
-        GameCanvas.startGameThread();
+        newGameCanvas.startGameThread();
     }
 }
