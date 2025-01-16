@@ -2,24 +2,27 @@
 import javax.swing.JFrame;
 
 import canvas.GameCanvas;
+import threads.GameThread;
 
-public class App {
+public class App{
     public static void main(String[] args) throws Exception {
         CreateGameWindow();
-        while (true) {
-            System.out.println("loop mian");
-        }
     }
 
     static void CreateGameWindow() {
         JFrame gameWindow = new JFrame("Sea Horse Game");
-        gameWindow.setSize(800, 600);
+        gameWindow.setSize(1200, 720);
         gameWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         gameWindow.setLocationRelativeTo(null);
-        // gameWindow.setResizable(false);
+        gameWindow.setResizable(false);
+
         GameCanvas newGameCanvas = new GameCanvas();
         gameWindow.add(newGameCanvas);
+
+        GameThread newGameThread = new GameThread();
+        newGameThread.gameCanvas = newGameCanvas;
+        newGameThread.startGameThread();
+
         gameWindow.setVisible(true);
-        newGameCanvas.startGameThread();
     }
 }
