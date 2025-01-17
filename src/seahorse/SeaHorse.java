@@ -2,9 +2,9 @@ package seahorse;
 
 public class SeaHorse {
     public int x, y;
+    public int speed = 1;
 
     public void Move() {
-        x = x + 1;
-        y = y + 1;
+        x += speed;
     }
 }

@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 import seahorse.SeaHorse;
 
 public class GameCanvas extends JPanel {
-    SeaHorse seaHorse1 = new SeaHorse();
+    SeaHorse seaHorse = new SeaHorse();
     public GameCanvas() {
         this.setPreferredSize(new Dimension(600, 600));
         this.setBackground(Color.lightGray);
@@ -26,8 +26,7 @@ public class GameCanvas extends JPanel {
         Graphics2D grp2d = (Graphics2D)grp;
 
         grp2d.setColor(Color.WHITE);
-        grp2d.fillRect(seaHorse1.x, seaHorse1.y, 50, 50);
-        seaHorse1.Move();
+        grp2d.fillRect(seaHorse.x, seaHorse.y, 50, 50);
         grp2d.dispose();
     }
 }
